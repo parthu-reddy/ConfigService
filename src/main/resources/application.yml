@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: config-service
+  config:
+    import: "optional:file:../Deployment/config-service.yml"
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:../Deployment/
+  security:
+    user:
+      name: ${CONFIG_USER:admin}
+      password: ${CONFIG_PASSWORD:admin}
+  profiles:
+    active: native
