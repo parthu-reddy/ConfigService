@@ -8,6 +8,12 @@ USER spring
 # Copy pre-compiled JAR from the target directory
 COPY ConfigService/target/*.jar app.jar
 
+# Create directory for config files and copy them
+USER root
+RUN mkdir -p /config && chown spring:spring /config
+USER spring
+COPY --chown=spring:spring Deployment/*.yml /config/
+
 ENV JAVA_OPTS="-XX:MaxRAMPercentage=75.0 -XX:+UseG1GC"
 
 EXPOSE 8888
