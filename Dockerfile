@@ -6,6 +6,7 @@ RUN java -Djarmode=tools -jar app.jar extract --layers --launcher --destination 
 
 # Final stage
 FROM eclipse-temurin:17-jre-jammy
+RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 
 # Non-root user setup for security
