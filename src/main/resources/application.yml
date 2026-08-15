@@ -1,4 +1,9 @@
 spring:
+  kafka:
+    listener:
+      observation-enabled: true
+    template:
+      observation-enabled: true
   application:
     name: config-service
   config:
@@ -26,3 +31,13 @@ logging:
       max-file-size: 10MB
       max-history: 30
       total-size-cap: 1GB
+
+
+management:
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+  otlp:
+    tracing:
+      endpoint: http://localhost:4318/v1/traces

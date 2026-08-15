@@ -5,7 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
 @EnableConfigServer
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.fooddelivery"})
+@org.springframework.context.annotation.ComponentScan({"com.fooddelivery", "com.fooddelivery.common"})
 public class ConfigServerApplication {
 
     public static void main(String[] args) {
