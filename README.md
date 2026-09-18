@@ -11,3 +11,4 @@ The ConfigService acts as the centralized configuration server for all microserv
 - **Centralized Configuration**: Stores and serves configuration properties for `ApiGateway`, `CustomerApplication`, etc.
 - **Environment Management**: Supports multiple profiles (`dev`, `prod`, `test`) to manage configurations per environment.
 - **Dynamic Updates**: Enables microservices to refresh their configurations dynamically (via `@RefreshScope`) without restarting.
+
